@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../styles/style_login.css">
+    <link rel="stylesheet" href="../styles/header_menu.css">
+    <link rel="icon" href="../images/icon.png">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Site Name</h1>
+        <nav>
+          <a href=#>About</a>
+          <a href=#>Services</a>
+          <a href=#>Contact</a>
+        </nav>
+      </header>
+
+    <form class="login_form">
+
+<div class="login_container">
+
+    <h1>Login</h1>
+        <div class="form-floating my-4 " id="email">
+            <input type="email" class="login_input" id="floatingInput" placeholder="Email">
+            <span class="login_input-border"id="error-email"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="login_input" id="floatingPassword" placeholder="Senha">
+            <span class="login_input-border"></span>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Lembre-se
+            </label>
+        </div>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Login</button>
+        <br>
+        <a class="login_resert" href="#">Esqueci a senha</a>
+</div>
+    </form>
+    <script src="../script/index.js"></script> 
+</body>
+</html>
