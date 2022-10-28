@@ -4,21 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/header_menu.css">
+    <title>Recovery</title>
+    <link rel="stylesheet" href="../src/css/style.css">
     <link rel="icon" href="../images/icon.png">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 </head>
 <body>
-    <header class="header">
-        <h1>Site Name</h1>
+    <!-- <header class="header">
+        <a href="../index.html">Site Name</a>
         <nav>
-          <a href=#>About</a>
-          <a href=#>Services</a>
-          <a href=#>Contact</a>
+            <a href="./about.html">About</a>
+            <a href="./services.html">Services</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./login.html">Login</a>
         </nav>
-      </header>
+    </header><br><br><br><br><br> -->
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <div class="logo">
+                    <img src="../images/icon.png" alt="">
+                </div>
+                <div class="nav-list">
+                    <ul>
+                        <li class="nav-item"><a href="../index.html" class="nav-link">Início</a></li>
+                        <li class="nav-item"><a href="./about.html" class="nav-link">Sobre</a></li>
+                        <li class="nav-item"><a href="./contact.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="login-button">
+                  <button><a href="./login.html">Login</a></button>
+                </div>
+    
+                <div class="mobile-menu-icon">
+                    <button onclick="menuShow2()"><img class="icon" src="../src/img/menu_white_36dp.svg" alt=""></button>
+                </div>
+            </nav>
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="./about.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="./contact.html" class="nav-link">Contato</a></li>
+                </ul>
+    
+                <div class="login-button">
+                    <button><a href="./login.html">Login</a></button>
+                </div>
+            </div>
+        </header>
 
-      <script src="../script/index.js"></script>
+
+        <script src="../src/js/script.js"></script>
 </body>
 </html>

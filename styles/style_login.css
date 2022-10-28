@@ -14,6 +14,7 @@ h1{
     height: 100vh;
     margin: 0 auto;
     justify-content: center;
+    
   }
   .login_container{
    min-height: 400px;
