@@ -14,3 +14,34 @@ html {
     font-family: 'Source Sans Pro', 'Open Sans', Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Myriad Pro', 'Segoe UI', Myriad, Helvetica, 'Lucida Grande', 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, Arial, sans-serif;
     -webkit-text-size-adjust: 100%;
 } 
+iframe {
+    width: 300px;
+    height: 250px;
+    margin: 10px;
+}
+
+h2 {
+    margin: 10px;
+}
+
+p {
+    margin: 10px;
+}
+.caixa {
+    display: block;
+    padding: 5px;
+    max-width: 330px;
+    margin: 0 auto;
+    justify-content: center;   
+    background-color: #7fdff7;
+    border-radius: 8px;
+  }
+
+.redessociais {
+    margin: 10px;
+}
+
+.iconrs {
+    width: 30px;
+    height: 30px;
+}

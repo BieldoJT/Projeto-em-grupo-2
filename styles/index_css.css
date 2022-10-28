@@ -52,3 +52,15 @@ article p+p {
     margin-top: .7em;
 }
 
+.textimg {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.img {
+    margin-right: 15px;
+}
+
+p {
+    text-align: justify;
+}

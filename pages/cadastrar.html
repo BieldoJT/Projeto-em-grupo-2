@@ -44,7 +44,7 @@
         </div>
     </header>
       <br><br>
-      <form class="login_form">
+      <form method="get" action="." class="login_form">
         <main class="cadastro_conteiner">
             <h1>Cadastro</h1><br>
             <div class="row">
@@ -55,45 +55,41 @@
                 <div class="inputbox">
                   <input placeholder="RG" class="cadastro_input" type="text" id="rg"  required>
                   <span class="login_input-border"id="error-email"></span>
-              </div>
+                </div>
                 <div class="inputbox">
                     <input placeholder="E-mail" class="cadastro_input" name="email"   type="text" id="email"  required>
                     <span class="login_input-border"id="error-email"></span>
                 </div>
-            </div>
-            <div class="row">
                 <div class="inputbox">
-                    <input placeholder="CEP" class="cadastro_input" name="cep"    type="text" id="cep"  required>
-                    <span class="login_input-border"id="error-email"></span>
+                    <input placeholder="CEP" class="cadastro_input" name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" /></label>
+                    <span class="login_input-border"id="error-cep"></span>
+                </div> 
+                <div class="inputbox"> 
+                    <input placeholder="Rua" class="cadastro_input" name="rua" type="text" id="rua" size="60"/></label>
+                    <span class="login_input-border"id="error-rua"></span>
+                </div>
+                <div class="inputbox"> 
+                    <input placeholder="Número" class="cadastro_input" name="numero" type="text" id="numero" size="60"/></label>
+                    <span class="login_input-border"id="error-rua"></span>
+                </div>
+                <div class="inputbox"> 
+                    <input placeholder="Complemento" class="cadastro_input" name="complemento" type="text" id="complemento" size="60"/></label>
+                    <span class="login_input-border"id="error-rua"></span>
                 </div>
                 <div class="inputbox">
-                    <input placeholder="Rua" class="cadastro_input" name="rua"  type="text" id="rua"  required>
-                    <span class="login_input-border"id="error-email"></span>
+                    <input placeholder="Bairro" class="cadastro_input" name="bairro" type="text" id="bairro" size="40" /></label>
+                    <span class="login_input-border"id="error-bairro"></span>
+
                 </div>
                 <div class="inputbox">
-                    <input placeholder="Número" class="cadastro_input" name="numero"  type="text" id="numero"  required>
-                    <span class="login_input-border"id="error-email"></span>
+                    <input placeholder="Cidade" class="cadastro_input" name="cidade" type="text" id="cidade" size="40" /></label>
+                    <span class="login_input-border"id="error-cidade"></span>
+
                 </div>
                 <div class="inputbox">
-                  <input placeholder="Complemento" class="cadastro_input" name="complemento"  type="text" id="complemento"  required>
-                  <span class="login_input-border"id="error-email"></span>
-              </div>
-            </div>
-            <div class="row">
-                <div class="inputbox">
-                    <input placeholder="Bairro" class="cadastro_input" name="bairro" type="text" id="bairro"  required>
-                    <span class="login_input-border"id="error-email"></span>
+                    <input placeholder="UF" class="cadastro_input" name="uf" type="text" id="uf" size="2" /></label>
                 </div>
-                <div class="inputbox">
-                    <input placeholder="Cidade" class="cadastro_input" name="cidade"  type="text" id="cidade"  required>
-                    <span class="login_input-border"id="error-email"></span>
-    
-                </div>
-                <div class="inputbox">
-                    <input placeholder="Estado" class="cadastro_input" name="estado"  type="text" id="estado"  required>
-                    <span class="login_input-border"id="error-email"></span>
-                </div>
-            </div>
+            </div><br>
             <div class="row-2">
                 <button class="btn btn-lg btn-primary btn-block mt-3" onclick="enviar">Pré-cadastro</button>
             </div>
@@ -106,6 +102,7 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+        <script src="../script/validador.js"></script>
         <script src="../script/cadastro2.js"></script>
         <script src="../script/script.js"></script>
 </body>
