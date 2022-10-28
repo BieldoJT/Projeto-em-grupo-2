@@ -5,33 +5,247 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel = "stylesheet" href="style.css"/>
+
+<!-- bootstrap -->
+<link
+ href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"/>
+ 
+<!--botstrap Icons-->
+<link 
+rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"/>
+
+    <script src="script.js" defer></script>
+
 </head>
-<body>
-    <form class="login_form">
-
-<div class="login_container">
-
-    <h1>Login</h1>
-        <div class="form-floating my-4 " id="email">
-            <input type="email" class="login_input" id="floatingInput" placeholder="Email">
-            <span class="login_input-border"id="error-email"></span>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="password" class="login_input" id="floatingPassword" placeholder="Senha">
-            <span class="login_input-border"></span>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Lembre-se
-            </label>
-        </div>
-        <br>
-        <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Login</button>
-        <br>
-        <a class="login_resert" href="#">Esqueci a senha</a>
+<body id="checkout-page">
+<div id="fade" class="hide">
+<div id="loader" class="spinner-border text-info hide" role="status">
+    <span class="visually-hidden">loading...</span>
 </div>
-    </form>
-    <script src="script.js"></script> 
+<div id="message" class="hide">
+    <div class="alert alert-light" role="alert">
+        <h4>Mensagem:</h4>
+        <p>texto da mensagem....</p>
+        <button id="clonse-message" type="button" class="bt btn-secondary">
+            fechar
+        </button>
+    </div>
+    </div>
+    </div>
+    <div id="order-form-container" class="container px-md-0">
+        <div id="steps" class="mb-md-3 pb-md-3"> <!--passos do usuario-->
+          <div class="line"></div>
+          <div class="step">
+           <i class="bi bi-person active"></i>
+           <p class="d-none d-md-block">Criação de conta</p>
+          </div>
+          <div class="step">
+              <i class="bi bi-geo-alt active"></i>
+              <p class="d-none d-md-block">Endereço</p>
+             </div>
+             <div class="step">
+              <i class="bi bi-credit-card"></i>
+              <p class="d-none d-md-block">Pagamento</p>
+             </div>
+      </div>
+    <div id="form-header">
+        <h2> Cadastre o seu endereço</h2>
+        <p>Prencha os campos para podermos enviar os seus produtos</p>
+    </div>
+    <form id="address-form">
+        <div class="form-floating mb-3 ">
+            <input
+              type="text"
+              class="form-control shadow-none"
+              id="name"
+              name="name"
+              placeholder="Apenas letras"
+              data-input
+              required
+            />
+            <label for="name">Nome</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control shadow-none"
+              id="email"
+              name="email"
+              placeholder="exemple@exemple.com"
+              maxlength
+              minlength
+              required
+              data-input
+            />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              class="form-control shadow-none"
+              id="senha"
+              name="senha"
+              placeholder="Digite o sua senha"
+              maxlength
+              minlength
+              required
+            />
+            <label for="senha">senha</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              class="form-control shadow-none"
+              id="senha2"
+              name="senha2"
+              placeholder="Confirme sua senha"
+              onblur="teste()"
+              required
+            />
+            <label for="senha2">Confirme sua senha</label>
+          </div>
+        <div class="row mb-3">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control shadow-none"
+                id="RG"
+                name="RG"
+                placeholder="Digite o seu RG"
+                maxlength="9"
+                minlength="9"
+                required
+              />
+              <label for="RG">RG</label>
+              <br>
+        <div class="row mb-3">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control shadow-none"
+              id="cep"
+              name="cep"
+              placeholder="Digite o seu CEP"
+              maxlength="8"
+              minlength="8"
+              required
+            />
+            <label for="cep">CEP</label>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12 col-sm-6 mb-3 mb-md-0 form-floating">
+            <input
+              type="text"
+              class="form-control shadow-none"
+              id="address"
+              name="address"
+              placeholder="Rua"
+              disabled
+              required
+              data-input
+            />
+            <label for="address">Rua</label>
+          </div>
+          <div class="col-12 col-sm-6 form-floating">
+            <input
+              type="text"
+              class="form-control shadow-none"
+              id="number"
+              name="number"
+              placeholder="Digite o número da residência"
+              required
+              data-input
+            />
+            <label for="number">Digite o número da residência</label>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12 col-sm-6 mb-3 mb-md-0 form-floating">
+            <input
+              type="text"
+              class="form-control shadow-none"
+              id="complement"
+              name="complement"
+              placeholder="Digite o complemento"
+              data-input
+            />
+            <label for="complement">Digite o complemento</label>
+          </div>
+          <div class="col-12 col-sm-6 form-floating">
+            <input
+              type="text"
+              class="form-control shadow-none"
+              id="neighborhood"
+              name="neighborhood"
+              placeholder="Bairro"
+              disabled
+              required
+              data-input
+            />
+            <label for="neighborhood">Bairro</label>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12 col-sm-6 mb-3 mb-md-0 form-floating">
+            <input
+              type="text"
+              class="form-control shadow-none"
+              id="city"
+              name="city"
+              placeholder="Cidade"
+              disabled
+              required
+              data-input
+            />
+            <label for="city">Cidade</label>
+          </div>
+          <div class="col-12 col-sm-6 mb-3">
+            <select
+              class="form-select shadow-none"
+              id="region"
+              disabled
+              required
+              data-input
+            >
+              <option selected>Estado</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button id="save-btn" type="submit" class="btn btn-primary">
+            Cadastrar
+          </button>
+        </div>
+      </form>
+</div>
 </body>
 </html>
