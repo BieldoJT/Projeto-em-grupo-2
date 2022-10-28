@@ -1,5 +1,7 @@
 const listaCarrinho = []
-const listaDecks = []
+const listaDecks = [{ deck: "Challenger Deck 2022: Rakdos Vampires", valor: 28.00, img: "img/decks/deck1.jpg", qtd: 1 },{ deck: "Challenger Deck 2022: Gruul Stompy", valor: 38.00, img: "img/decks/deck2.jpg", qtd: 1 },{ deck: "Challenger Deck 2022: Mono White Aggro", valor: 35.00, img: "img/decks/deck3.jpg", qtd: 1 },{ deck: "Challenger Deck 2022: Dimir Control", valor: 40.00, img: "img/decks/deck4.jpg", qtd: 1 },{ deck: "Challenger Deck 2021: Azorius Control", valor: 38.00, img: "img/decks/deck5.jpg", qtd: 1 },{ deck: "Challenger Deck 2021: Dimir Rogues", valor: 22.00, img: "img/decks/deck6.jpg", qtd: 1 },{ deck: "Challenger Deck 2021: Mono Green Stompy", valor: 25.00, img: "img/decks/deck7.jpg", qtd: 1 },{ deck: "Challenger Deck 2020: Allied Fires", valor: 28.00, img: "img/decks/deck8.jpg", qtd: 1 },{ deck: "Challenger Deck 2020: Flash of Ferocity", valor: 20.00, img: "img/decks/deck9.jpg", qtd: 1 },{ deck: "Challenger Deck 2020: Final Adventure", valor: 40.00, img: "img/decks/deck10.jpg", qtd: 1 },{ deck: "Challenger Deck 2020: Cavalcade Charge", valor: 22.00, img: "img/decks/deck11.jpg", qtd: 1 },{ deck: "Challenger Deck 2019: Arcane Tempo", valor: 48.00, img: "img/decks/deck12.jpg", qtd: 1 }]
+
+
 let elementosParaEsconder = [$("#cartVazio"), $("#acoesCart"), $("#button")];
 
 
@@ -12,6 +14,8 @@ $(document).ready(() => {
     let iconeFecharCarrinho = $("#fecharCart")
     let totalItens= 0
     let htmlTotalItens = $("#total-itens-valor")
+    let totalPreçoTexto = $("#preçoTotal")
+    let totalPreço = 0
     
 
     const abrirCarrinho = ()=>{
@@ -25,9 +29,6 @@ $(document).ready(() => {
         $("#cart").css("display", "none")
     })
 
-    const atualizarTotal = ( )=>{ 
-
-    }
 
     const abreFechaCarrinho = () => {
         if (listaCarrinho.length === 0) {
@@ -53,36 +54,46 @@ $(document).ready(() => {
     const adicionarCarrinho = $(".addCarrinho")
     adicionarCarrinho.each((index, button) => {
         $(button).click(() => {
-            const novoItem = criarItem()
-
+            console.log(index)
+            const item = listaDecks[index]
+            const novoItem = criarItem(item)
             listaCarrinho.push(novoItem);
+           
+            const preço = listaDecks[index].valor
+            totalPreço += preço
+            totalPreçoTexto.text(`R$ ${totalPreço},00`)
             carrinho.append(novoItem)
-            console.log(listaCarrinho)
             abreFechaCarrinho()
             totalItens+=1
             htmlTotalItens.text(totalItens)
             abrirCarrinho()
-
-
+            
         });
+    })
+
+    const removerCarrinho = $(".remove")
+    removerCarrinho.each((index,button)=>{
+        $(button).click(()=>{
+            console.log(index)
+            if(index>-1){
+                listaCarrinho.splice(index,1)
+            }
+            
+        })
     })
 
 
 
 
 
-    const criarItem = (item = { deck: "Challenger Deck 2020: Flash of Ferocity", valor: 30.00, img: "img/foto deck magic.jpg", qtd: 1 }) => {
+    const criarItem = (item) => {
         const novoProduto = $("<div />")
         const novoProdutoImagem = $("<img />")
         const novoProdutoInfo = $("<div />")
         const novoProdutoNome = $("<div />")
         const novoProdutoPreco = $("<div />");
-        const novoProdutoopcoes = $("<div />");
-        const seletorQtd = $("<div />");
-        const opcapAdd = $("<span class='addItem me-2 pe-1 border-end '><img src='img/add.png'alt='add'></span>");
-        const opcaoMinus = $("<span class='minus ms-2 ps-1 border-start'><img src='img/remove.png'  alt='remove'></span>");
-        const removerNovoProduto = $("<div class='remove'><img src='img/recycle-bin.png' alt='lixeira'></div>");
-        const qtd = $("<span />");
+        const removerNovoProduto = $("<div class='remove d-flex justify-content-around'><img src='img/recycle-bin.png' alt='lixeira'></div>");
+        
 
 
 
@@ -90,22 +101,18 @@ $(document).ready(() => {
         novoProdutoImagem.addClass("produtoCart-imagem");
         novoProdutoInfo.addClass("produtoCart-info w-100");
         novoProdutoNome.addClass("produtoNome mt-2");
-        novoProdutoPreco.addClass("produtoPreÃ§o mb-1");
-        novoProdutoopcoes.addClass("opcoesProduto w-100 mb-2 d-flex justify-content-around");
-        seletorQtd.addClass("w-75 border border-1 border-dark text-center rounded-3");
-        qtd.addClass("quantidade");
+        novoProdutoPreco.addClass("produtoPreço mb-1");
+     
+        
 
 
 
 
-        seletorQtd.append(opcapAdd);
-        seletorQtd.append(qtd);
-        seletorQtd.append(opcaoMinus);
-        novoProdutoopcoes.append(seletorQtd);
-        novoProdutoopcoes.append(removerNovoProduto);
+        
+        ;
         novoProdutoInfo.append(novoProdutoNome);
         novoProdutoInfo.append(novoProdutoPreco);
-        novoProdutoInfo.append(novoProdutoopcoes);
+        novoProdutoInfo.append(removerNovoProduto)
         novoProduto.append(novoProdutoImagem);
         novoProduto.append(novoProdutoInfo);
 
@@ -113,7 +120,6 @@ $(document).ready(() => {
         novoProdutoNome.text(`${item.deck}`);
         novoProdutoPreco.text(`R$  ${item.valor}`);
         novoProdutoImagem.attr("src", `${item.img}`);
-        qtd.text(`${item.qtd}`)
 
 
         return novoProduto
@@ -123,3 +129,4 @@ $(document).ready(() => {
 
     abreFechaCarrinho()
 })
+
