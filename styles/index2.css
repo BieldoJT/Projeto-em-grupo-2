@@ -1,0 +1,71 @@
+nav{
+    width: 100%;
+}
+
+.col{
+    border: 1px black solid;
+    color: black;  
+}
+
+#cart{
+    display: none;
+}
+
+#fecharCart{
+    height: 26px;
+    width: 26px;
+    top: 15px;
+    right: 25px ;
+    background-color: aquamarine;
+    border-radius: 50%;
+}
+
+
+#conteudoCart{
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    float: right;
+    padding: 24px;
+}
+
+
+#button-shop{
+    bottom: 15px; 
+    margin-right: 35px;
+}
+
+
+#button{
+    bottom: 6%;
+    width: 100%;
+}
+
+
+
+.tirarProduto{
+    background-color: black;
+    height: 15px;
+    width: 15px;
+}
+
+.h-45{
+    width: 50%;
+    
+}
+
+.col-xs{
+    border: 1px solid black;
+}
+
+.produto:hover{
+    background-color: aquamarine;
+}
+
+.produtoCart:hover{
+    box-shadow:  0px 0px 25px 1px rgba(0, 0, 0, 0.5)
+
+}
+
+.produtosCart{
+    overflow-y:scroll;
+}
