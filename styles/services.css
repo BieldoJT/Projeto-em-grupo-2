@@ -14,3 +14,107 @@ html {
     font-family: 'Source Sans Pro', 'Open Sans', Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Myriad Pro', 'Segoe UI', Myriad, Helvetica, 'Lucida Grande', 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, Arial, sans-serif;
     -webkit-text-size-adjust: 100%;
 }
+
+body{
+    background-color: #eee;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+    color: black;
+  }
+
+.cadastro_conteiner {
+    min-height: 400px;
+    width: 300px;
+    background-color: #7fdff7;
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login {
+    max-width: 330px;
+    padding: 50px;
+    height: 100vh;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .login_form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .cadastro_input {
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left:8px; 
+    border: unset;
+    outline: none;
+  }
+  .login_input-border{
+   height: 1px;
+   width: 100%;
+   margin-bottom: 16px;
+   background: #cfcfcf;
+  }
+  .login_input-border::after{
+    content:'';
+    display: block;
+    height: 1px;
+    width: 0;
+    margin-bottom: 16px;
+  }
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+  }
+  .btn.focus, .btn:focus, .btn:hover {
+    color: #333;
+    text-decoration: none;
+  }
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  .btn-group-lg>.btn, .btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+  }
+  .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }

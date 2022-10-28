@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="icon" href="../images/icon.png">
+    <link rel="stylesheet" href="../styles/services.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="icon" href="../images/icon.png">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <img src="../images/icon.png" alt="">
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="./about.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="./contact.html" class="nav-link">Contato</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+              <button><a href="./login.html">Login</a></button>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow2()"><img class="icon" src="../src/img/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="../index.html" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="./about.html" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="./contact.html" class="nav-link">Contato</a></li>
+            </ul>
+
+            <div class="login-button">
+                <button><a href="./login.html">Login</a></button>
+            </div>
+        </div>
+    </header>
+      <br><br>
+      <form class="login_form">
+        <main class="cadastro_conteiner">
+            <h1>Cadastro</h1><br>
+            <div class="row">
+                <div class="inputbox">
+                    <input placeholder="Nome" class="cadastro_input" type="text" id="nome" required>
+                    <span class="login_input-border"id="error-email"></span>
+                </div>
+                <div class="inputbox">
+                  <input placeholder="RG" class="cadastro_input" type="text" id="rg"  required>
+                  <span class="login_input-border"id="error-email"></span>
+              </div>
+                <div class="inputbox">
+                    <input placeholder="E-mail" class="cadastro_input" name="email"   type="text" id="email"  required>
+                    <span class="login_input-border"id="error-email"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="inputbox">
+                    <input placeholder="CEP" class="cadastro_input" name="cep"    type="text" id="cep"  required>
+                    <span class="login_input-border"id="error-email"></span>
+                </div>
+                <div class="inputbox">
+                    <input placeholder="Rua" class="cadastro_input" name="rua"  type="text" id="rua"  required>
+                    <span class="login_input-border"id="error-email"></span>
+                </div>
+                <div class="inputbox">
+                    <input placeholder="Número" class="cadastro_input" name="numero"  type="text" id="numero"  required>
+                    <span class="login_input-border"id="error-email"></span>
+                </div>
+                <div class="inputbox">
+                  <input placeholder="Complemento" class="cadastro_input" name="complemento"  type="text" id="complemento"  required>
+                  <span class="login_input-border"id="error-email"></span>
+              </div>
+            </div>
+            <div class="row">
+                <div class="inputbox">
+                    <input placeholder="Bairro" class="cadastro_input" name="bairro" type="text" id="bairro"  required>
+                    <span class="login_input-border"id="error-email"></span>
+                </div>
+                <div class="inputbox">
+                    <input placeholder="Cidade" class="cadastro_input" name="cidade"  type="text" id="cidade"  required>
+                    <span class="login_input-border"id="error-email"></span>
+    
+                </div>
+                <div class="inputbox">
+                    <input placeholder="Estado" class="cadastro_input" name="estado"  type="text" id="estado"  required>
+                    <span class="login_input-border"id="error-email"></span>
+                </div>
+            </div>
+            <div class="row-2">
+                <button class="btn btn-lg btn-primary btn-block mt-3" onclick="enviar">Pré-cadastro</button>
+            </div>
+        </form>
+        </main>
+        <br><br>
+
+        <script src="../src/js/script.js"></script>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <script src="../script/cadastro2.js"></script>
+        <script src="../script/script.js"></script>
+</body>
+</html>
